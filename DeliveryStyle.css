@@ -1,0 +1,23 @@
+.wraper{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.buttons{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
