@@ -84,3 +84,90 @@ h6 {
 	display: none;
 }
 */
+body {
+  background: url(../img/acc_page_bg.jpg) 100% 100% no-repeat fixed;
+  background-size: cover;
+}
+
+._container {
+  width: 1300px;
+  height: 100%;
+  margin: 0% auto;
+}
+
+.toplayout__header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin: 20px 0px;
+  color: orangered;
+}
+
+.toplayout__img_field {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.toplayout__img_field input[type="file"] {
+  display: none;
+}
+
+.toplayout__img {
+  position: relative;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.toplayout__img img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.toplayout__change_img {
+  position: absolute;
+  bottom: 0px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid aqua;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.toplayout__change_img::after, .toplayout__change_img::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 2px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 80%;
+  background: aqua;
+  -webkit-transition: background 0.2s ease-in;
+  transition: background 0.2s ease-in;
+}
+
+.toplayout__change_img::before {
+  -webkit-transform: rotate(-90deg) translateY(-5%);
+          transform: rotate(-90deg) translateY(-5%);
+}
+
+@media (any-hover: hover) {
+  .toplayout__change_img:hover {
+    color: #2e4b4b;
+  }
+  .toplayout__change_img:hover::after, .toplayout__change_img:hover::before {
+    background: #2e4b4b;
+  }
+}

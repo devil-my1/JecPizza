@@ -13,7 +13,14 @@
         <div class="account__body">
             <div class="account__toplayout toplayout">
                 <h1 class="toplayout__header">Account</h1>
-                <div class="toplayout__img"><img></div>
+                <div class="toplayout__img_field">
+                    <div class="toplayout__img">
+                        <img src="img/ava.jpg" alt="img">
+                    </div>
+                    <input type="file" accept="image/*" name="img" id="file_sel">
+                    <label for="file_sel" class="toplayout__change_img"></label>
+                </div>
+
                 <h2 class="toplayout__subtitle">userName</h2>
                 <ul class="toplayout__categories categories">
                     <li class="categories__item"><a href="#">Account</a></li>
@@ -31,6 +38,7 @@
 
     </div>
 
+    <script src="acc_page_script.js"></script>
 </body>
 
 </html>
