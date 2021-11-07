@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <link rel="stylesheet" href="./css/AccountStyle.css">
@@ -21,21 +23,99 @@
                     <label for="file_sel" class="toplayout__change_img"></label>
                 </div>
 
-                <h2 class="toplayout__subtitle">userName</h2>
+                <h2 class="toplayout__user-name">Fallen Angel</h2>
                 <ul class="toplayout__categories categories">
-                    <li class="categories__item"><a href="#">Account</a></li>
-                    <li class="categories__item"><a href="#">Change Password</a></li>
-                    <li class="categories__item"><a href="#">Billing Address</a></li>
-                    <li class="categories__item"><a href="#">My Orders</a></li>
-                    <li class="categories__item"><a href="#">Privacy</a></li>
-                    <li class="categories__item"><a href="#">Notification</a></li>
-                    <li class="categories__item"><a href="#">My Photos</a></li>
-                    <li class="categories__item"><a href="#">Delete Account</a></li>
+                    <li class="categories__item _active">
+                        <input type="radio" name="group1" checked id="chk1" />
+                        <a name="chk1" href="#s1">Account</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk2" />
+                        <a name="chk2" href="#s2">Change Password</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk3" />
+                        <a name="chk3" href="#s3">Billing Address</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk4" />
+                        <a name="chk4" href="#s4">My Orders</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk5" />
+                        <a name="chk5" href="#s5">Privacy</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk6" />
+                        <a name="chk6" href="#s6">Notification</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk7" />
+                        <a name="chk7" href="#s7">My Photos</a>
+                    </li>
+                    <li class="categories__item">
+                        <input type="radio" name="group1" id="chk8" />
+                        <a name="chk8" href="#s8">Delete Account</a>
+                    </li>
                 </ul>
             </div>
 
+            <div class="account__bottomlayout bottomlayout">
+                <div id="s1" class="bottomlayout__account account section">
+                    <form action="GET" autocomplete="off" class="account__form form">
+                        <p class="form__field">
+                            <input type="text" autocomplete="off" id="txbUserName" name="userNameBox">
+                            <label class="form__label" for="txbUserName"><span class="content-name">User
+                                    Name</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="text" autocomplete="off" id="txbName" name="nameBox">
+                            <label class="form__label" for="txbName"><span class="content-name">Name</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="text" autocomplete="off" id="addressBox" name="addressBox">
+                            <label class="form__label" for="addressBox"><span
+                                    class="content-name">Address</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="email" autocomplete="off" id="txbMail" name="txbMail">
+                            <label class="form__label" for="txbMail"><span class="content-name">Mail
+                                    Address</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="text" autocomplete="off" id="txbPhoneNum" name="txbPhoneNum">
+                            <label class="form__label" for="txbPhoneNum"><span class="content-name">Phone
+                                    Number</span></label>
+                        </p>
+                    </form>
+                </div>
+                <div id="s2" class="bottomlayout__changepass changepass section">
+                    <form action="Get" class="changepass__form form">
+                        <p class="form__field">
+                            <input type="password" autocomplete="off" required id="oldPassBox" name="oldPassBox">
+                            <label class="form__label" for="oldPassBox"><span class="content-name">Old
+                                    Password</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="password" autocomplete="off" required id="txbNewPass" name="txbNewPass">
+                            <label class="form__label" for="txbNewPass"><span class="content-name">New
+                                    Password</span></label>
+                        </p>
+                        <p class="form__field">
+                            <input type="password" autocomplete="off" required id="txbConfPass" name="txbConfPass">
+                            <label class="form__label" for="txbConfPass"><span class="content-name">Confirm
+                                    Password</span></label>
+                        </p>
+                    </form>
+                </div>
+                <div id="s3" class="bottomlayout__address address section"></div>
+                <div id="s4" class="bottomlayout__orders oreders section"></div>
+                <div id="s5" class="bottomlayout__privacy section"></div>
+                <div id="s6" class="bottomlayout__notif notif section"></div>
+                <div id="s7" class="bottomlayout__photos section"></div>
+                <div id="s8" class="bottomlayout__deleteacc deleteacc section"></div>
+            </div>
         </div>
-
     </div>
 
     <script src="acc_page_script.js"></script>

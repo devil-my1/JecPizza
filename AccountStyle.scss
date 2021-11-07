@@ -1,5 +1,9 @@
 @import "null";
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     background: url(../img/acc_page_bg.jpg) 100% 100% no-repeat fixed;
     background-size: cover;
@@ -16,6 +20,10 @@ body {
     }
 
     &__toplayout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 .toplayout {
@@ -38,24 +46,50 @@ body {
 
     &__img {
         position: relative;
+        display: flex;
+        background: linear-gradient(130deg, #8e60cf, #b74b16);
         border-radius: 50%;
+        margin-bottom: 20px;
+        margin-top: 50px;
+        -webkit-animation: animated-grad 2s linear infinite;
+        animation: animated-grad 2s linear infinite;
+        background-size: 200%, 200%;
         width: 250px;
         height: 250px;
         overflow: hidden;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
 
         img {
-            position: absolute;
-            height: 100%;
-            width: 100%;
+            display: block;
+            height: 95%;
+            width: 95%;
             top: 0;
             left: 0;
+            border-radius: 50%;
             object-fit: cover;
+        }
+    }
+
+    @keyframes animated-grad {
+        25% {
+            background-position: left bottom;
+        }
+        50% {
+            background-position: right bottom;
+        }
+        75% {
+            background-position: right top;
+        }
+        100% {
+            background-position: left top;
         }
     }
 
     &__change_img {
         position: absolute;
-        bottom: 0px;
+        bottom: 20px;
         right: 40px;
         width: 40px;
         height: 40px;
@@ -74,7 +108,7 @@ body {
             transform: translateX(-50%);
             height: 80%;
             background: aqua;
-            transition: background 0.2s ease-in;
+            transition: all 0.2s ease-in;
         }
 
         &::before {
@@ -89,17 +123,203 @@ body {
                 &::before {
                     background: #2e4b4b;
                 }
+                &::before {
+                    transform: rotate(45deg) translate(-5%);
+                }
+                &::after {
+                    transform: rotate(130deg) translate(-5%);
+                }
             }
         }
     }
 
-    &__subtitle {
-    }
-
-    &__categories {
+    &__user-name {
+        font-size: 32px;
+        font-family: Balonku;
+        color: #b74b16;
+        line-height: 150%;
     }
 }
 .categories {
+    text-align: center;
+    padding: 15px 30px;
+
     &__item {
+        display: inline-block;
+        position: relative;
+        font-size: 18px;
+        background: #999;
+        margin: 5px;
+        padding: 8px 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease-in;
+
+        & > input[type="radio"] {
+            display: none;
+        }
+        & > a {
+            display: block;
+            position: relative;
+            width: 100%;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: "Times New Roman", Times, serif;
+            transition: color 0.2s ease-in;
+        }
+
+        @media (any-hover: hover) {
+            &:hover > a {
+                color: #ff8700;
+                text-shadow: 0 0 15px #ff8700, 0px 0px 30px #ff8700;
+            }
+        }
+    }
+    &__item._active {
+        transform: translateY(-15px);
+
+        & > a {
+            color: #c26700;
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: linear-gradient(90deg, #0ac2a9, #c05b17, #48488a);
+            }
+
+            &::before {
+                left: -14px;
+                top: -1px;
+                // clip-path: polygon(0% 10%, 50% 50%, 0% 90%, 25% 50%, 0 10%);
+                clip-path: polygon(0 0, 25% 50%, 25% 50%, 0 100%, 50% 50%);
+            }
+            &::after {
+                right: -18px;
+                top: -1px;
+                // clip-path: polygon(50% 10%, 25% 50%, 50% 90%, 60% 50%, 0% 10%);
+                clip-path: polygon(100% 0, 25% 50%, 25% 50%, 100% 100%, 50% 50%);
+            }
+        }
+    }
+}
+
+.bottomlayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    border-top: 2px solid #999;
+    &__account {
+    }
+
+    &__changepass {
+    }
+
+    &__address {
+    }
+
+    &__orders {
+    }
+
+    &__privacy {
+    }
+
+    &__notif {
+    }
+
+    &__photos {
+    }
+
+    &__deleteacc {
+    }
+}
+.account {
+}
+.section {
+    width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+    color: white;
+
+    &:target {
+        height: auto;
+    }
+}
+.changepass {
+}
+.address {
+}
+.oreders {
+}
+.notif {
+}
+.deleteacc {
+}
+
+.form {
+    position: relative;
+    overflow: hidden;
+
+    &__field {
+        position: relative;
+        margin: 20px 0;
+    }
+
+    & input {
+        position: relative;
+        bottom: 2px;
+        width: 100%;
+        padding-top: 20px;
+        color: #fff;
+        border: none;
+        background: none;
+        outline: none;
+
+        &:focus + .form__label .content-name {
+            font-size: 14px;
+            color: #00e2ff;
+            transform: translateY(-150%);
+        }
+
+        &:focus + .form__label::after {
+            transform: translateX(0%);
+        }
+    }
+
+    &__label {
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        border-bottom: 2px solid #f3e410bd;
+        border-radius: 2px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            border-bottom: 2px solid #f36929;
+            border-radius: 2px;
+            transform: translateX(-100%);
+            transition: all 0.4s ease-in;
+        }
+
+        & > .content-name {
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            transition: all 0.3s ease-in;
+        }
     }
 }

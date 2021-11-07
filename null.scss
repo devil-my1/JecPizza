@@ -10,6 +10,12 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+@font-face {
+	font-family: Balonku;
+	src: url("../fonts/Balonku-Regular.ttf"), url("../fonts/Balonku-Regular.woff") format("woff"),
+		url("../fonts/Balonku-Regular.woff2") format("woff2"), url("../fonts/BalonkuRegular-la1w.otf");
+}
 :focus,
 :active {
 	// outline: none;
